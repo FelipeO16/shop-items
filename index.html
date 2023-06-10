@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" ></script>
+</head>
+
+<moduleNavShop>
+
+    <body>
+        <div id="actionmenuNavShop">
+            <mainNavShop>
+                <div id="menu">
+
+                    <header>
+                        <div class="display">
+                            <img src="assets/images/bag.svg">
+                            <div class="title">
+                                <div class="title-text">Lojinha</div>
+                                <small>Itens para compra</small>
+                            </div>
+                        </div>
+                        <div class="menu-options">
+                            <div class="itemMenu active" id="toCart" onClick="navShopMenu('cart')">
+                                <img src="assets/images/menu_cart.svg"> 
+                                <span>Meu carrinho</span>
+                                <img src="assets/images/menu_arrow_right.svg">
+                            </div>
+                            
+                            <div id="search" class="itemMenu">
+                                <label for="search-text"><img src="assets/images/menu_search.svg"></label>
+                                <input type="text" id="search-text" placeholder="PESQUISAR ITEM...">
+                            </div>
+                            
+                            <!-- <div class="itemMenu" id="menuBuy" onClick="navShopMenu('buy')">Comprar</div> -->
+
+                            <!-- <div class="itemMenu active" id="toCart" onClick="navShopMenu('shop')">
+                                <img src="assets/images/menu_arrow_left.svg">
+                                <span>Continuar Comprando</span>
+                            </div> -->
+                            <button class="close"><img src="assets/images/menu_close.svg"></button>
+                        </div>
+                    </header>
+                    <section class="listagemNavShop">
+                        <!-- <div class="itemNav">
+                            <div class="item">
+                                <div class="item-weight">0.5 KG</div>
+                                <img src="assets/images/roupas.svg" width="100">
+                                <div class="item-info">
+                                    <div class="item-name">Roupas</div>
+                                    <div class="item-value">R$ 500.000</div>
+                                </div>
+                                <div class="item-description">Te permite trocar de roupas onde desejar.</div>
+                                <div class="button-buy" onClick="navShopAction('${shopIndex}', '${value.index}')">Adicionar ao carrinho</div>
+                            </div>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="mouse"><img src="assets/images/mouse.svg" alt=""><span> Deslize para ver mais</span></div>
+            </mainNavShop>
+        </div>
+    </body>
+</moduleNavShop>
+
+<script src="fonts.js"></script>
+<script src="script.js"></script>
+
+</html>

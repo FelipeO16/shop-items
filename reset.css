@@ -1,0 +1,47 @@
+#nui-fun_crafting > html, #nui-fun_crafting > body, #nui-fun_crafting > div, #nui-fun_crafting > span, #nui-fun_crafting > applet, #nui-fun_crafting > object, #nui-fun_crafting > iframe,
+#nui-fun_crafting > h1, #nui-fun_crafting > h2, #nui-fun_crafting > h3, #nui-fun_crafting > h4, #nui-fun_crafting > h5, #nui-fun_crafting > h6, #nui-fun_crafting > p, #nui-fun_crafting > blockquote, #nui-fun_crafting > pre,
+#nui-fun_crafting > a, #nui-fun_crafting > abbr, #nui-fun_crafting > acronym, #nui-fun_crafting > address, #nui-fun_crafting > big, #nui-fun_crafting > cite, #nui-fun_crafting > code,
+#nui-fun_crafting > del, #nui-fun_crafting > dfn, #nui-fun_crafting > em, #nui-fun_crafting > img, #nui-fun_crafting > ins, #nui-fun_crafting > kbd, #nui-fun_crafting > q, #nui-fun_crafting > s, #nui-fun_crafting > samp,
+#nui-fun_crafting > small, #nui-fun_crafting > strike, #nui-fun_crafting > strong, #nui-fun_crafting > sub, #nui-fun_crafting > sup, #nui-fun_crafting > tt, #nui-fun_crafting > var,
+#nui-fun_crafting > b, #nui-fun_crafting > u, #nui-fun_crafting > i, #nui-fun_crafting > center,
+#nui-fun_crafting > dl, #nui-fun_crafting > dt, #nui-fun_crafting > dd, #nui-fun_crafting > ol, #nui-fun_crafting > ul, #nui-fun_crafting > li,
+#nui-fun_crafting > fieldset, #nui-fun_crafting > form, #nui-fun_crafting > label, #nui-fun_crafting > legend,
+#nui-fun_crafting > table, #nui-fun_crafting > caption, #nui-fun_crafting > tbody, #nui-fun_crafting > tfoot, #nui-fun_crafting > thead, #nui-fun_crafting > tr, #nui-fun_crafting > th, #nui-fun_crafting > td,
+#nui-fun_crafting > article, #nui-fun_crafting > aside, #nui-fun_crafting > canvas, #nui-fun_crafting > details, #nui-fun_crafting > embed, 
+#nui-fun_crafting > figure, #nui-fun_crafting > figcaption, #nui-fun_crafting > footer, #nui-fun_crafting > header, #nui-fun_crafting > hgroup, 
+#nui-fun_crafting > menu, #nui-fun_crafting > nav, #nui-fun_crafting > output, #nui-fun_crafting > ruby, #nui-fun_crafting > section, #nui-fun_crafting > summary,
+#nui-fun_crafting > time, #nui-fun_crafting > mark, #nui-fun_crafting > audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+#nui-fun_crafting > article, #nui-fun_crafting > aside, #nui-fun_crafting > details, #nui-fun_crafting > figcaption, #nui-fun_crafting > figure, 
+#nui-fun_crafting > footer, #nui-fun_crafting > header, #nui-fun_crafting > hgroup, #nui-fun_crafting > menu, #nui-fun_crafting > nav, section {
+	display: block;
+}
+#nui-fun_crafting > body {
+	line-height: 1;
+}
+#nui-fun_crafting > ol, ul {
+	list-style: none;
+}
+#nui-fun_crafting > blockquote, q {
+	quotes: none;
+}
+#nui-fun_crafting > blockquote:before,#nui-fun_crafting >  blockquote:after,
+#nui-fun_crafting > q:before, q:after {
+	content: '';
+	content: none;
+}
+#nui-fun_crafting table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#nui-fun_crafting  button, #nui-fun_crafting input {
+    outline:none;
+    border:none;
+}
