@@ -246,124 +246,160 @@ function fillMain() {
   }
 }
 
-function fillCart() {
-  $(".cart-left-items").html("");
-  calculateTotalPrice();
+// function fillCart() {
+//   $(".cart-left-items").html("");
+//   calculateTotalPrice();
 
-  if (cart.length == 0) {
-    $(".cart-left-items").html(
-      `<span class="cart-left-items-empty">Carrinho vazio!</span>`
-    );
-  } else {
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i]) {
-        let cartItem = $(`
-          <div class="cart-left-item">
-            <div class="cart-left-item-img">
-              <img src="${
-                navshop_image_url + cart[i].img
-              }" class="cart-item-img">
-            </div>
-            <div class="cart-left-item-info">
-              <div class="cart-left-item-name">${cart[i].name}</div>
-              <div class="cart-left-item-description">${
-                cart[i].description
-              }</div>
-            </div>
-            <div class="cart-left-item-weight">
-              <div class="cart-left-item-weight-text">Peso</div>
-              <div class="cart-left-item-weight-value">${
-                cart[i].weight * cart[i].amount
-              } KG</div>
-            </div>
-            <div class="cart-left-item-quantity">
-              <div class="cart-left-item-quantity-input">
-                <div class="cart-left-item-quantity-input-minus" onClick="minusAmount(${i})">
-                  <img src="assets/images/menu_minus.svg" alt="">
-                </div>
-                <input type="text" class="cart-left-item-quantity-input-value" value="${
-                  cart[i].amount
-                }" />
-                <div class="cart-left-item-quantity-input-plus" onClick="plusAmount(${i})">
-                  <img src="assets/images/menu_plus.svg" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="cart-left-item-total">
-              <div class="cart-left-item-total-value">R$ ${getItemPrice(
-                i
-              )}</div>
-            </div>
-            <div class="cart-left-item-remove" onclick="deleteItem(${i})">
-              <img src="assets/images/menu_delete.svg">
-            </div>
-          </div>
-        `);
+//   if (cart.length == 0) {
+//     $(".cart-left-items").html(
+//       `<span class="cart-left-items-empty">Carrinho vazio!</span>`
+//     );
+//   } else {
+//     for (let i = 0; i < cart.length; i++) {
+//       if (cart[i]) {
+//         let cartItem = $(`
+//           <div class="cart-left-item">
+//             <div class="cart-left-item-img">
+//               <img src="${
+//                 navshop_image_url + cart[i].img
+//               }" class="cart-item-img">
+//             </div>
+//             <div class="cart-left-item-info">
+//               <div class="cart-left-item-name">${cart[i].name}</div>
+//               <div class="cart-left-item-description">${
+//                 cart[i].description
+//               }</div>
+//             </div>
+//             <div class="cart-left-item-weight">
+//               <div class="cart-left-item-weight-text">Peso</div>
+//               <div class="cart-left-item-weight-value">${
+//                 cart[i].weight * cart[i].amount
+//               } KG</div>
+//             </div>
+//             <div class="cart-left-item-quantity">
+//               <div class="cart-left-item-quantity-input">
+//                 <!-- do a input and buttons plus and minus -->
+//                 <div class="cart-left-item-quantity-input-minus" onClick="minusAmount(${i})>
+//                     <img src="assets/images/menu_minus.svg" alt="">
+//                 </div>
+//                 <input type="text" class="cart-left-item-quantity-input-value" value="${
+//                   cart[i].amount
+//                 }" />
+//                 <div class="cart-left-item-quantity-input-plus" onClick="plusAmount(${i})">
+//                     <img src="assets/images/menu_plus.svg" alt="">
+//                 </div>
+//               </div>
+//             </div>
+//             <div class="cart-left-item-total">
+//                   <div class="cart-left-item-total-value">R$ ${getItemPrice(
+//                     i
+//                   )}</div>
+//               </div>
+//               <div class="cart-left-item-remove" onclick="deleteItem(${i})">
+//                   <img src="assets/images/menu_delete.svg">
+//               </div>
+//           </div>
+//         `);
 
-        let quantityInput = cartItem.find(".cart-left-item-quantity-input");
-        quantityInput
-          .find(".cart-left-item-quantity-input-minus")
-          .click(function () {
-            minusAmount(i);
-          });
-        quantityInput
-          .find(".cart-left-item-quantity-input-plus")
-          .click(function () {
-            plusAmount(i);
-          });
+//         let quantityInput = $(`
+//         <div class="cart-left-item-quantity">
+//           <div class="cart-left-item-quantity-input">
+//             <div class="cart-left-item-quantity-input-minus">
+//               <img src="assets/images/menu_minus.svg" alt="">
+//             </div>
+//             <input type="text" class="cart-left-item-quantity-input-value" value="${cart[i].amount}" />
+//             <div class="cart-left-item-quantity-input-plus">
+//               <img src="assets/images/menu_plus.svg" alt="">
+//             </div>
+//           </div>
+//         </div>
+//         `);
+//         quantityInput
+//           .find(".cart-left-item-quantity-input-minus")
+//           .click(function () {
+//             minusAmount(i);
+//           });
 
-        $(".cart-left-items").append(cartItem);
-      } else {
-        let cartItem = $(`
-          <div class="cart-left-item" style="display: none">
-            <div class="cart-left-item-img">
-              <img src="" class="cart-item-img">
-            </div>
-            <div class="cart-left-item-info">
-              <div class="cart-left-item-name">name</div>
-              <div class="cart-left-item-description">description</div>
-            </div>
-            <div class="cart-left-item-weight">
-              <div class="cart-left-item-weight-text">Peso</div>
-              <div class="cart-left-item-weight-value">weight KG</div>
-            </div>
-            <div class="cart-left-item-quantity">
-              <div class="cart-left-item-quantity-input">
-                <div class="cart-left-item-quantity-input-minus" onClick="minusAmount()">
-                  <img src="assets/images/menu_minus.svg" alt="">
-                </div>
-                <input type="text" class="cart-left-item-quantity-input-value" value="${cart[i]}" />
-                <div class="cart-left-item-quantity-input-plus" onClick="plusAmount()">
-                  <img src="assets/images/menu_plus.svg" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="cart-left-item-total">
-              <div class="cart-left-item-total-value">R$</div>
-            </div>
-            <div class="cart-left-item-remove" onclick="deleteItem()">
-              <img src="assets/images/menu_delete.svg">
-            </div>
-          </div>
-        `);
+//         quantityInput
+//           .find(".cart-left-item-quantity-input-plus")
+//           .click(function () {
+//             plusAmount(i);
+//           });
 
-        let quantityInput = cartItem.find(".cart-left-item-quantity-input");
-        quantityInput
-          .find(".cart-left-item-quantity-input-minus")
-          .click(function () {
-            minusAmount(i);
-          });
-        quantityInput
-          .find(".cart-left-item-quantity-input-plus")
-          .click(function () {
-            plusAmount(i);
-          });
+//         cartItem.find(".cart-left-item-quantity").replaceWith(quantityInput);
+//         $(".cart-left-items").append(cartItem);
+//       } else {
+//         let cartItem = $(`
+//           <div class="cart-left-item" style="display: none">
+//             <div class="cart-left-item-img">
+//               <img src="" class="cart-item-img">
+//             </div>
+//             <div class="cart-left-item-info">
+//               <div class="cart-left-item-name">name</div>
+//               <div class="cart-left-item-description">
+//                 description
+//               </div>
+//             </div>
+//             <div class="cart-left-item-weight">
+//               <div class="cart-left-item-weight-text">Peso</div>
+//               <div class="cart-left-item-weight-value">
+//                 weight
+//                KG</div>
+//             </div>
+//             <div class="cart-left-item-quantity">
+//               <div class="cart-left-item-quantity-input">
+//                 <!-- do a input and buttons plus and minus -->
+//                 <div class="cart-left-item-quantity-input-minus" onClick="minusAmount()>
+//                     <img src="assets/images/menu_minus.svg" alt="">
+//                 </div>
+//                 <input type="text" class="cart-left-item-quantity-input-value" value="
+//                   cart[i]
+//                 }" />
+//                 <div class="cart-left-item-quantity-input-plus" onClick="plusAmount()">
+//                     <img src="assets/images/menu_plus.svg" alt="">
+//                 </div>
+//               </div>
+//             </div>
+//             <div class="cart-left-item-total">
+//                   <div class="cart-left-item-total-value">R$</div>
+//               </div>
+//               <div class="cart-left-item-remove" onclick="deleteItem()">
+//                   <img src="assets/images/menu_delete.svg">
+//               </div>
+//           </div>
+//         `);
 
-        $(".cart-left-items").append(cartItem);
-      }
-    }
-  }
-}
+//         let quantityInput = $(`
+//         <div class="cart-left-item-quantity">
+//           <div class="cart-left-item-quantity-input">
+//             <div class="cart-left-item-quantity-input-minus">
+//               <img src="assets/images/menu_minus.svg" alt="">
+//             </div>
+//             <input type="text" class="cart-left-item-quantity-input-value" value="" />
+//             <div class="cart-left-item-quantity-input-plus">
+//               <img src="assets/images/menu_plus.svg" alt="">
+//             </div>
+//           </div>
+//         </div>
+//         `);
+//         quantityInput
+//           .find(".cart-left-item-quantity-input-minus")
+//           .click(function () {
+//             minusAmount(i);
+//           });
+
+//         quantityInput
+//           .find(".cart-left-item-quantity-input-plus")
+//           .click(function () {
+//             plusAmount(i);
+//           });
+
+//         cartItem.find(".cart-left-item-quantity").replaceWith(quantityInput);
+//         $(".cart-left-items").append(cartItem);
+//       }
+//     }
+//   }
+// }
 
 fillMain();
-fillCart();
+// fillCart();
