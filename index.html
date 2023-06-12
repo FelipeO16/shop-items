@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 
 <moduleNavShop>
@@ -23,38 +23,72 @@
                         </div>
                         <div class="menu-options">
                             <div class="itemMenu active" id="toCart" onClick="navShopMenu('cart')">
-                                <img src="assets/images/menu_cart.svg"> 
+                                <img src="assets/images/menu_cart.svg">
                                 <span>Meu carrinho</span>
                                 <img src="assets/images/menu_arrow_right.svg">
                             </div>
-                            
+
                             <div id="search" class="itemMenu">
                                 <label for="search-text"><img src="assets/images/menu_search.svg"></label>
                                 <input type="text" id="search-text" placeholder="PESQUISAR ITEM...">
                             </div>
-                            
-                            <!-- <div class="itemMenu" id="menuBuy" onClick="navShopMenu('buy')">Comprar</div> -->
 
-                            <!-- <div class="itemMenu active" id="toCart" onClick="navShopMenu('shop')">
+                            <div class="itemMenu active" id="toShop" onClick="navShopMenu('shop')">
                                 <img src="assets/images/menu_arrow_left.svg">
                                 <span>Continuar Comprando</span>
-                            </div> -->
+                            </div>
                             <button class="close"><img src="assets/images/menu_close.svg"></button>
                         </div>
                     </header>
                     <section class="listagemNavShop">
-                        <!-- <div class="itemNav">
-                            <div class="item">
-                                <div class="item-weight">0.5 KG</div>
-                                <img src="assets/images/roupas.svg" width="100">
-                                <div class="item-info">
-                                    <div class="item-name">Roupas</div>
-                                    <div class="item-value">R$ 500.000</div>
-                                </div>
-                                <div class="item-description">Te permite trocar de roupas onde desejar.</div>
-                                <div class="button-buy" onClick="navShopAction('${shopIndex}', '${value.index}')">Adicionar ao carrinho</div>
+                    </section>
+                    <section id="cart">
+                        <div class="cart-left">
+
+                            <div class="cart-title">
+                                <img src="assets/images/menu_hamburger.svg" alt="">
+                                <div class="cart-title-text">Meus Produtos</div>
                             </div>
-                        </div> -->
+
+                            <div class="cart-left-items">
+
+                            </div>
+                        </div>
+                        <div class="cart-right">
+                            <div class="cart-title">
+                                <img src="assets/images/menu_hamburger.svg" alt="">
+                                <div class="cart-title-text">Forma de Pagamento</div>
+                            </div>
+                            <div class="payment-methods">
+                                <div class="method wallet">
+                                    <img src="assets/images/payment_wallet.svg">
+                                    Carteira
+                                    <div class="method-selected wallet-selected" style="display: none;">
+                                        <img src="assets/images/payment_selected.svg">
+                                    </div>
+                                </div>
+                                <div class="method card">
+                                    <img src="assets/images/payment_card.svg">
+                                    Cartão
+                                    <div class="method-selected card-selected" style="display: none;">
+                                        <img src="assets/images/payment_selected.svg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-finish">
+                                <div class="discount-vip">
+                                    <div class="text">Desconto de VIP</div>
+                                    <div class="value">-R$1.000</div>
+                                </div>
+                                <div class="total-value">
+                                    <div class="text"> Total dos produtos</div>
+                                    <div class="value">R$44.000</div>
+                                </div>
+                                <div class="payment-buy">
+                                    Finalizar Pagamento
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
                 <div class="mouse"><img src="assets/images/mouse.svg" alt=""><span> Deslize para ver mais</span></div>

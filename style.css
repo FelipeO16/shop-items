@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap");
 
 :root {
     --modal-background: linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.012) 100%);
     --modal-background-selected: linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.012) 100%);
-    --primary: #D81650;
-    --white: #FFF;
+    --primary: #d81650;
+    --white: #fff;
     --white-transparent: rgba(255, 255, 255, 0.75);
 }
-
 
 body {
     margin: 0;
@@ -16,7 +14,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: url('assets/images/background.png');
+    background: url("assets/images/background.png");
     backdrop-filter: blur(5px);
 }
 
@@ -26,7 +24,7 @@ body {
     user-select: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
 #actionmenuNavShop {
@@ -47,7 +45,6 @@ mainNavShop {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    
 }
 
 mainNavShop .title {
@@ -66,12 +63,12 @@ mainNavShop .title {
 }
 
 mainNavShop .title small {
-    opacity: .5;
+    opacity: 0.5;
     font-weight: 300;
 }
 
 mainNavShop .title small h1 {
-    opacity: .5;
+    opacity: 0.5;
     font-weight: 600;
 }
 
@@ -97,12 +94,13 @@ mainNavShop #menu header {
     justify-content: flex-start;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    
+
     /* margin-top: 80%; */
     /* margin-left: -3%; */
 }
 
-#toCart {
+#toCart,
+#toShop {
     background: var(--primary);
     opacity: 0.85;
     cursor: pointer;
@@ -141,9 +139,6 @@ mainNavShop #menu header {
     background: linear-gradient(0deg, rgba(216, 22, 80, 0.15) 0%, rgba(216, 22, 80, 0.199) 100%);
 }
 
-
-
-
 /* mainNavShop #menu header .item#menu {
     width: 100px;
     height: 60px;
@@ -161,7 +156,7 @@ mainNavShop #menu header {
 .itemMenu {
     border-radius: 6px;
     text-transform: uppercase;
-    font-family: 'Outfit';
+    font-family: "Outfit";
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -181,7 +176,8 @@ mainNavShop #menu header .item#menu img {
     max-width: 50%;
 }
 
-.display, .menu-options {
+.display,
+.menu-options {
     width: 50%;
     display: flex;
     gap: 2rem;
@@ -198,17 +194,15 @@ mainNavShop #menu header .item#menu img {
     padding-left: 5px;
 } */
 
-
-
-mainNavShop #menu section .active {
+/* mainNavShop #menu section .active {
     /* opacity: 1; */
-    /* background-color: var(--primary); */
+/* background-color: var(--primary); 
     
-}
+} */
 
 mainNavShop #menu section .active::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     width: 100%;
@@ -228,7 +222,7 @@ mainNavShop #menu section .active .overlay {
     padding: 5px 10px;
     border-radius: 30px;
     letter-spacing: 1px;
-    transition: all .3s;
+    transition: all 0.3s;
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.811);
 }
@@ -250,9 +244,9 @@ mainNavShop #menu section .itemNav {
     border-radius: 5px;
     margin-bottom: 10px;
     margin-top: 10px;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     align-items: center;
-    min-width: 23%;
+    width: 23%;
     height: 50%;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.01);
@@ -260,7 +254,7 @@ mainNavShop #menu section .itemNav {
 }
 
 mainNavShop #menu section .itemNav:hover {
-    border:1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* mainNavShop #menu section .itemNav img {
@@ -282,7 +276,7 @@ mainNavShop #menu section .itemNav .item {
 }
 
 mainNavShop #menu section .itemNav .item-info {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -296,12 +290,9 @@ mainNavShop #menu section .itemNav .item-info {
     text-transform: uppercase;
 }
 
-
-
-
 mainNavShop #menu section .itemNav .item-info small {
     font-size: 1.2vw;
-    font-family: 'black';
+    font-family: "black";
 }
 
 .item-weight {
@@ -332,7 +323,7 @@ mainNavShop #menu section .itemNav .item-info small {
 }
 
 .item-value {
-    font-family: 'Outfit';
+    font-family: "Outfit";
     line-height: 20px;
     display: flex;
     align-items: center;
@@ -342,20 +333,20 @@ mainNavShop #menu section .itemNav .item-info small {
 }
 
 .item-description {
-    font-family: 'Outfit';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 15px;
-display: flex;
-align-items: center;
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
 
-color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .button-buy {
-    margin-left: .5rem;
-    font-family: 'Outfit';
+    margin-left: 0.5rem;
+    font-family: "Outfit";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -372,8 +363,6 @@ color: rgba(255, 255, 255, 0.55);
     background: rgba(255, 255, 255, 0.1);
 }
 
-
-
 .itemNav span {
     color: var(--primary);
 }
@@ -389,6 +378,292 @@ color: rgba(255, 255, 255, 0.55);
     gap: 2%;
 }
 
+#cart {
+    width: 100%;
+    border-radius: 0.5vw;
+    padding: 5px;
+    height: 85%;
+    overflow: auto;
+    display: flex;
+    gap: 1rem;
+    gap: 2%;
+    overflow: auto;
+    /* display: none; */
+}
+
+.cart-left {
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+}
+
+.cart-right {
+    width: 30%;
+    height: 100%;
+}
+
+.cart-left,
+.cart-right {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.cart-title {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.cart-title-text {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.cart-left-items {
+    max-height: 100%;
+    overflow: auto;
+}
+
+.cart-left-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    padding: 1rem;
+    height: 5rem;
+}
+
+.cart-left-item-info {
+    width: 30%;
+}
+
+.cart-left-item-name {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: white;
+}
+
+.cart-left-item-weight,
+.cart-left-item-info {
+    font-family: "Outfit";
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.cart-left-item-weight-text,
+.cart-left-item-description {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    width: 100%;
+}
+
+.cart-left-item-weight-value {
+    width: 15%;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.cart-left-item-weight {
+    width: 8%;
+}
+
+.cart-left-item-quantity-input {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    justify-content: center;
+}
+
+.cart-item-img {
+    width: 4rem;
+    height: 4rem;
+}
+.cart-left-item-quantity-input-value {
+    width: 3rem;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cart-left-item-info {
+    width: 25%;
+}
+
+.cart-left-item-total {
+    width: 15%;
+}
+
+.cart-left-item-quantity-input-plus,
+.cart-left-item-quantity-input-minus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cart-left-item-total-value {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+    color: #ffffff;
+}
+
+.cart-left-item-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cart-left-items-empty {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    line-height: 18px;
+    position: absolute;
+    padding: 2rem 0;
+}
+
+.payment-methods {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.method {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 6px;
+}
+
+.method-active {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%),
+        rgba(255, 255, 255, 0.03);
+}
+
+.method-selected {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.payment-finish {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 1.5rem;
+}
+
+.payment-finish .text {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.payment-finish .value {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: white;
+}
+
+.payment-buy {
+    background: linear-gradient(90deg, #d81650 0%, rgba(216, 22, 80, 0.51) 100%);
+    border: 1px solid #d81650;
+    border-radius: 5px;
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+
+.payment-buy:hover {
+    background: linear-gradient(90deg, #d81650 0%, rgba(216, 22, 80, 0.6) 100%);
+}
+
+.discount-vip,
+.total-value {
+    display: flex;
+    justify-content: space-between;
+}
+
+.qtt {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
 .mouse {
     display: flex;
     gap: 8px;
@@ -398,12 +673,9 @@ color: rgba(255, 255, 255, 0.55);
     animation: bounce 2s infinite alternate;
 }
 
-
 mainNavShop ::-webkit-scrollbar {
     width: 1px;
 }
-
-
 
 @media (max-width: 1260px) {
     mainNavShop {
@@ -416,6 +688,12 @@ mainNavShop ::-webkit-scrollbar {
 
     .menu-options {
         width: 70%;
+    }
+    input {
+        width: 10rem;
+    }
+    mainNavShop #menu section .itemNav {
+        width: 40%;
     }
 }
 
@@ -437,13 +715,43 @@ mainNavShop ::-webkit-scrollbar {
         padding: 5px;
         height: 85%;
         overflow: auto;
-        display: flex;
         flex-wrap: wrap;
         gap: 2%;
+    }
+
+    input {
+        width: 5rem;
+    }
+
+    #cart {
+        flex-direction: column;
+    }
+
+    .cart-left,
+    .cart-right {
+        width: 100%;
+    }
+
+    mainNavShop #menu section {
+        justify-content: center;
+    }
+
+    mainNavShop #menu section .itemNav {
+        width: 40%;
+    }
+}
+
+@media (max-width: 566px) {
+    mainNavShop #menu section .itemNav {
+        width: 50%;
     }
 }
 
 @keyframes bounce {
-    0% {transform: translateY(0);} 
-    100% {transform: translateY(20px);} 
-} 
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
