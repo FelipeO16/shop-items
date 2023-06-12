@@ -587,6 +587,7 @@ mainNavShop #menu section .itemNav .item-info small {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.01);
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .method-active {

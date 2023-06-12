@@ -1,4 +1,4 @@
-const navshop_image_url = "http://sv2.eagleworld.com.br/itens/";
+const navshop_image_url = "assets/images/items/";
 
 //variables
 
@@ -75,32 +75,7 @@ const item = [
   },
 ];
 
-let cart = [
-  {
-    name: "Roupas",
-    price: 100,
-    weight: 0.5,
-    img: "roupas.png",
-    description: "Te permite trocar de roupas onde desejar.",
-    amount: 3,
-  },
-  {
-    name: "Mochila",
-    price: 100,
-    weight: 0.5,
-    img: "mochila.png",
-    description: "Aumentará seu espaço no inventário.",
-    amount: 2,
-  },
-  {
-    name: "Rádio",
-    price: 100,
-    weight: 0.5,
-    img: "radio.png",
-    description: "Rádio comunicador.",
-    amount: 3,
-  },
-];
+let cart = [];
 
 // functions
 
@@ -219,32 +194,32 @@ $(".payment-methods").on("click", ".wallet", function () {
 });
 
 $("#search-text").on("keyup", function () {
-  var search = $(this).val();
   $(".listagemNavShop").html("");
-  var filtered = item.filter(function (el) {
-    return el.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
-  });
-  for (let i = 0; i < filtered.length; i++) {
-    $(".listagemNavShop").append(`
-            <div class="itemNav">
-                <div class="item">
-                    <div class="item-weight">${filtered[i].weight} KG</div>
-                    <img src="${
-                      navshop_image_url + filtered[i].img
-                    }" width="100">
-                    <div class="item-info">
-                        <div class="item-name">${filtered[i].name}</div>
-                        <div class="item-value"> R$ ${getPrice(
-                          filtered[i].price
-                        )}</div>
-                    </div>
-                    <div class="item-description">${
-                      filtered[i].description
-                    }</div>
-                    <div class="button-buy" onClick="navShopAction('', '')">Adicionar ao carrinho</div>
-                </div>
-            </div>
+  for (let i = 0; i < item.length; i++) {
+    if (item[i]) {
+      if (
+        item[i].name
+          .toLowerCase()
+          .includes($("#search-text").val().toLowerCase())
+      ) {
+        $(".listagemNavShop").append(`
+          <div class="itemNav">
+              <div class="item">
+                  <div class="item-weight">${item[i].weight} KG</div>
+                  <img src="${navshop_image_url + item[i].img}" width="100">
+                  <div class="item-info">
+                      <div class="item-name">${item[i].name}</div>
+                      <div class="item-value"> R$ ${getPrice(
+                        item[i].price
+                      )}</div>
+                  </div>
+                  <div class="item-description">${item[i].description}</div>
+                  <div class="button-buy" onClick="navShopAction(${i})">Adicionar ao carrinho</div>
+              </div>
+          </div>
         `);
+      }
+    }
   }
 });
 
