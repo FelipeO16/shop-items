@@ -94,9 +94,6 @@ mainNavShop #menu header {
     justify-content: flex-start;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
-    /* margin-top: 80%; */
-    /* margin-left: -3%; */
 }
 
 #toCart,
@@ -139,20 +136,6 @@ mainNavShop #menu header {
     background: linear-gradient(0deg, rgba(216, 22, 80, 0.15) 0%, rgba(216, 22, 80, 0.199) 100%);
 }
 
-/* mainNavShop #menu header .item#menu {
-    width: 100px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    transition: all .3s;
-    border-radius: 6px;
-    justify-content: center;
-    font-weight: 900;
-    /* background-color: #212121; 
-} 
-*/
-
 .itemMenu {
     border-radius: 6px;
     text-transform: uppercase;
@@ -186,19 +169,6 @@ mainNavShop #menu header .item#menu img {
 .menu-options {
     justify-content: flex-end;
 }
-
-/* mainNavShop #menu section {
-    position: relative;
-    height: 100px;
-    overflow: auto;
-    padding-left: 5px;
-} */
-
-/* mainNavShop #menu section .active {
-    /* opacity: 1; */
-/* background-color: var(--primary); 
-    
-} */
 
 mainNavShop #menu section .active::before {
     position: absolute;
@@ -257,10 +227,6 @@ mainNavShop #menu section .itemNav:hover {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* mainNavShop #menu section .itemNav img {
-    position: absolute;
-} */
-
 mainNavShop #menu section .active img {
     filter: blur(5px);
 }
@@ -280,13 +246,6 @@ mainNavShop #menu section .itemNav .item-info {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* right: 90px;
-    color: #ffff;
-    font-size: .6vw;
-    font-weight: 300;
-    text-align: center;
-    font-family: 'black'; */
-    /* letter-spacing: 1px; */
     text-transform: uppercase;
 }
 
@@ -315,7 +274,6 @@ mainNavShop #menu section .itemNav .item-info small {
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
-    /* identical to box height */
 
     display: flex;
     align-items: center;
@@ -360,7 +318,9 @@ mainNavShop #menu section .itemNav .item-info small {
 }
 
 .button-buy:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, #d81650 0%, rgba(216, 22, 80, 0.51) 100%);
+    color: white;
+    transition: all 0.4s ease;
 }
 
 .itemNav span {
@@ -388,7 +348,6 @@ mainNavShop #menu section .itemNav .item-info small {
     gap: 1rem;
     gap: 2%;
     overflow: auto;
-    /* display: none; */
 }
 
 .cart-left {

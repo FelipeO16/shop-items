@@ -161,21 +161,21 @@ function navShopAction(index) {
 
 function navShopMenu(option) {
   if (option == "cart") {
-    $("#toCart").slideUp(300);
-    $("#search").slideUp(300);
-    $("#toShop").delay(300).slideDown(300);
+    $(".listagemNavShop").slideUp(0);
+    $("#cart").slideDown(0);
+    $("#toCart").slideUp(0);
+    $("#toShop").slideDown(0);
+    $("#search").toggle("slide");
     $(".title-text").text("Carrinho");
     $(".title small").text("FINALIZE SUA COMPRA");
-    $(".listagemNavShop").slideUp(100);
-    $("#cart").delay(100).slideDown(100);
   } else {
-    $("#toShop").slideUp(300);
-    $("#toCart").delay(300).slideDown(300);
-    $("#search").delay(300).slideDown(300);
+    $("#cart").slideUp(0);
+    $(".listagemNavShop").slideDown(0);
+    $("#toShop").slideUp(0);
+    $("#toCart").slideDown(0);
+    $("#search").toggle("slide");
     $(".title-text").text("Lojinha");
     $(".title small").text("Itens para compra");
-    $("#cart").slideUp(100);
-    $(".listagemNavShop").delay(100).slideDown(100);
   }
 }
 
@@ -278,55 +278,40 @@ function fillCart() {
             </div>
             <div class="cart-left-item-quantity">
               <div class="cart-left-item-quantity-input">
-                <!-- do a input and buttons plus and minus -->
-                <div class="cart-left-item-quantity-input-minus" onClick="minusAmount(${i})>
-                    <img src="assets/images/menu_minus.svg" alt="">
+                <div class="cart-left-item-quantity-input-minus" onClick="minusAmount(${i})">
+                  <img src="assets/images/menu_minus.svg" alt="">
                 </div>
                 <input type="text" class="cart-left-item-quantity-input-value" value="${
                   cart[i].amount
                 }" />
                 <div class="cart-left-item-quantity-input-plus" onClick="plusAmount(${i})">
-                    <img src="assets/images/menu_plus.svg" alt="">
+                  <img src="assets/images/menu_plus.svg" alt="">
                 </div>
               </div>
             </div>
             <div class="cart-left-item-total">
-                  <div class="cart-left-item-total-value">R$ ${getItemPrice(
-                    i
-                  )}</div>
-              </div>
-              <div class="cart-left-item-remove" onclick="deleteItem(${i})">
-                  <img src="assets/images/menu_delete.svg">
-              </div>
+              <div class="cart-left-item-total-value">R$ ${getItemPrice(
+                i
+              )}</div>
+            </div>
+            <div class="cart-left-item-remove" onclick="deleteItem(${i})">
+              <img src="assets/images/menu_delete.svg">
+            </div>
           </div>
         `);
 
-        let quantityInput = $(`
-        <div class="cart-left-item-quantity">
-          <div class="cart-left-item-quantity-input">
-            <div class="cart-left-item-quantity-input-minus">
-              <img src="assets/images/menu_minus.svg" alt="">
-            </div>
-            <input type="text" class="cart-left-item-quantity-input-value" value="${cart[i].amount}" />
-            <div class="cart-left-item-quantity-input-plus">
-              <img src="assets/images/menu_plus.svg" alt="">
-            </div>
-          </div>
-        </div>
-        `);
+        let quantityInput = cartItem.find(".cart-left-item-quantity-input");
         quantityInput
           .find(".cart-left-item-quantity-input-minus")
           .click(function () {
             minusAmount(i);
           });
-
         quantityInput
           .find(".cart-left-item-quantity-input-plus")
           .click(function () {
             plusAmount(i);
           });
 
-        cartItem.find(".cart-left-item-quantity").replaceWith(quantityInput);
         $(".cart-left-items").append(cartItem);
       } else {
         let cartItem = $(`
@@ -336,65 +321,44 @@ function fillCart() {
             </div>
             <div class="cart-left-item-info">
               <div class="cart-left-item-name">name</div>
-              <div class="cart-left-item-description">
-                description
-              </div>
+              <div class="cart-left-item-description">description</div>
             </div>
             <div class="cart-left-item-weight">
               <div class="cart-left-item-weight-text">Peso</div>
-              <div class="cart-left-item-weight-value">
-                weight
-               KG</div>
+              <div class="cart-left-item-weight-value">weight KG</div>
             </div>
             <div class="cart-left-item-quantity">
               <div class="cart-left-item-quantity-input">
-                <!-- do a input and buttons plus and minus -->
-                <div class="cart-left-item-quantity-input-minus" onClick="minusAmount()>
-                    <img src="assets/images/menu_minus.svg" alt="">
+                <div class="cart-left-item-quantity-input-minus" onClick="minusAmount()">
+                  <img src="assets/images/menu_minus.svg" alt="">
                 </div>
-                <input type="text" class="cart-left-item-quantity-input-value" value="
-                  cart[i]
-                }" />
+                <input type="text" class="cart-left-item-quantity-input-value" value="${cart[i]}" />
                 <div class="cart-left-item-quantity-input-plus" onClick="plusAmount()">
-                    <img src="assets/images/menu_plus.svg" alt="">
+                  <img src="assets/images/menu_plus.svg" alt="">
                 </div>
               </div>
             </div>
             <div class="cart-left-item-total">
-                  <div class="cart-left-item-total-value">R$</div>
-              </div>
-              <div class="cart-left-item-remove" onclick="deleteItem()">
-                  <img src="assets/images/menu_delete.svg">
-              </div>
+              <div class="cart-left-item-total-value">R$</div>
+            </div>
+            <div class="cart-left-item-remove" onclick="deleteItem()">
+              <img src="assets/images/menu_delete.svg">
+            </div>
           </div>
         `);
 
-        let quantityInput = $(`
-        <div class="cart-left-item-quantity">
-          <div class="cart-left-item-quantity-input">
-            <div class="cart-left-item-quantity-input-minus">
-              <img src="assets/images/menu_minus.svg" alt="">
-            </div>
-            <input type="text" class="cart-left-item-quantity-input-value" value="" />
-            <div class="cart-left-item-quantity-input-plus">
-              <img src="assets/images/menu_plus.svg" alt="">
-            </div>
-          </div>
-        </div>
-        `);
+        let quantityInput = cartItem.find(".cart-left-item-quantity-input");
         quantityInput
           .find(".cart-left-item-quantity-input-minus")
           .click(function () {
             minusAmount(i);
           });
-
         quantityInput
           .find(".cart-left-item-quantity-input-plus")
           .click(function () {
             plusAmount(i);
           });
 
-        cartItem.find(".cart-left-item-quantity").replaceWith(quantityInput);
         $(".cart-left-items").append(cartItem);
       }
     }
